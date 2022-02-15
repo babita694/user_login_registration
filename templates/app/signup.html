@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}signup{% endblock title %}
+{% block main-content %}
+<div class="container">
+ <div class="row my-3">
+  <div class="col-sm-6 offset-sm-3">
+   <h3>signup</h3>
+  
+   <form action="" method="post" >
+      {% csrf_token %}
+      <div class="mb-3">
+
+      <label for="username" class="form-label">Username</label>
+      <input type="username"  name='username' class="form-control" id="username">
+     <label for="email" class="form-label">Email</label>
+     <input type="email"  name='email' class="form-control" id="inputEmail4">
+     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+     <label for="password" class="form-label">Password</label>
+     <input type="password"  name='password ' class="form-control" id="password">
+    </div>
+    <div class="mb-3">
+   <label for="cPassword" class="form-label">Confirm Password</label>
+     <input type="cpassword" name='cpassword' class="form-control" id="cpassword">
+    </div>
+    <div class="text-end">
+    <button type="button" class="btn btn-danger">Submit</button>
+    </div>
+    <br>
+    <div class="text-center text-primary fw-bold"><small>Existing User ? <a href="{% url 'signin' %}"
+       class="text-danger">signin Now</a> </small></div>
+    
+   </form>
+  </div>
+ </div>
+</div>
+{% endblock main-content %}
